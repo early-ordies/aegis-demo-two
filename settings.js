@@ -10,8 +10,8 @@ const gasPriceVal = 20;
 var FROM_PUB = "";
 var TO_PUB = "";
 
-const DEFAULT_PUB = "0xa68A0cA55aD5A74FE185d76D523c218328Bf72c6";
-const DEFAULT_PRIV = "42e067fc9e7a52c640b1be90e50c7a908c7d8ac19d07ccb1dafc9293256ecc4b";
+const DEFAULT_PUB = "0x67F6Dd9380A38c7E9b7973c8A7eCbB8f5BFBF89A";
+const DEFAULT_PRIV = "991ddc4c9466c813583c16b8188aa1ec7fae1d809bed28134dfcb39daef77383";
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
