@@ -39,6 +39,13 @@ $(document).ready(function () {
         console.log("Registered Default Account");
       }
       FROM_PUB = DEFAULT_PUB
+      nocust.subscribe({
+        address: FROM_PUB,
+        event: 'TRANSFER_CONFIRMATION',
+        callback: callBack,
+        token: AUSD_ADDRESS
+      });
+      console.log("Subscribed Account");
 
       $("#send-button").prop('disabled', false);
       $("#send-button").text('💸 Send');
@@ -88,7 +95,7 @@ $(document).ready(function () {
       getOffChainBalance();
 
       let onChainBalance = await nocust.getParentChainBalance(FROM_PUB, AUSD_ADDRESS);
-      if (onChainBalance >= 100000000000000000000) {
+      if (onChainBalance >= 100000000000000000000000000) {
         $("#account-on-chain-balance").text('On-chain Balance: ' + onChainBalance + ' AUSD');
       } else {
         $("#account-on-chain-balance").text('On-chain Balance: ' + web3.utils.fromWei(onChainBalance.toString()) + ' AUSD');
